@@ -1,11 +1,16 @@
 <template>
-  <layout>
-    <p>Label.vue</p>
-  </layout>
+  <div class="nav-wrapper">
+    <div class="content">
+      <slot></slot>
+    </div>
+    <Nav />
+  </div>
 </template>
 
-<script>
-export default {};
+<script lang="ts">
+export default {
+  name: "Layout",
+};
 </script>
 
 <style lang="scss" scoped>

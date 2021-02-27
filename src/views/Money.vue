@@ -1,23 +1,15 @@
 <template>
-  <div class="nav-wrapper">
-    <div class="content">Money.vue</div>
-    <Nav />
-  </div>
+  <layout>
+    <p>Money.vue</p>
+  </layout>
 </template>
 
 <script>
-export default {};
+import Layout from "@/components/Layout.vue";
+export default {
+  components: { Layout },
+};
 </script>
 
 <style lang="scss" scoped>
-.nav-wrapper {
-  display: flex;
-  border: 1px solid green;
-  flex-direction: column;
-  height: 100vh;
-}
-.content {
-  flex-grow: 1;
-  overflow: auto;
-}
 </style>

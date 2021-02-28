@@ -9,14 +9,4 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.nav-wrapper {
-  display: flex;
-  border: 1px solid green;
-  flex-direction: column;
-  height: 100vh;
-}
-.content {
-  flex-grow: 1;
-  overflow: auto;
-}
 </style>

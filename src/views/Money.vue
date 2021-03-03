@@ -1,7 +1,7 @@
 <template>
   <Layout classPrefix="layout">
     <number-pad />
-    <Types xxx="hi" />
+    <Types :xxx="555" />
     <Notes />
     <Tags />
   </Layout>

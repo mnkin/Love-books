@@ -1,27 +1,65 @@
 <template>
   <div class="numberPad">
-    <div class="output">100</div>
+    <div class="output">{{ output }}</div>
     <div class="buttons">
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>删除</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>清空</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button class="OK">OK</button>
-      <button class="zero">0</button>
-      <button>-</button>
+      <button @click="intputContent">1</button>
+      <button @click="intputContent">2</button>
+      <button @click="intputContent">3</button>
+      <button @click="remove">删除</button>
+      <button @click="intputContent">4</button>
+      <button @click="intputContent">5</button>
+      <button @click="intputContent">6</button>
+      <button @click="clear">清空</button>
+      <button @click="intputContent">7</button>
+      <button @click="intputContent">8</button>
+      <button @click="intputContent">9</button>
+      <button @click="ok" class="ok">OK</button>
+      <button @click="intputContent" class="zero">0</button>
+      <button @click="intputContent">.</button>
     </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script lang="ts">
+import Vue from "vue";
+import { Component } from "vue-property-decorator";
+
+@Component
+export default class NumberPad extends Vue {
+  output = "0";
+  intputContent(event: MouseEvent) {
+    const button = event.target as HTMLButtonElement;
+    const input = button.textContent as string;
+    if (this.output.length === 16) {
+      return;
+    }
+    if (this.output === "0") {
+      if ("0123456789".indexOf(input) >= 0) {
+        this.output = input;
+      } else {
+        this.output += input;
+      }
+      return;
+    }
+    if (this.output.indexOf(".") >= 0 && input === ".") {
+      return;
+    }
+    this.output += input;
+  }
+  remove() {
+    if (this.output.length === 1) {
+      this.output = "0";
+    } else {
+      this.output = this.output.slice(0, -1);
+    }
+  }
+  clear() {
+    this.output = "0";
+  }
+  ok() {
+    return;
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -34,6 +72,7 @@ export default {};
     font-family: Consolas, monospace;
     padding: 9px 16px;
     text-align: right;
+    height: 72px;
   }
   .buttons {
     > button {
@@ -42,7 +81,7 @@ export default {};
       float: left;
       background: transparent;
       border: none;
-      &.OK {
+      &.ok {
         height: 64 * 2px;
         float: right;
       }

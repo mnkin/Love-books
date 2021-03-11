@@ -1,4 +1,3 @@
-
 <template>
   <Layout>
     <p>Statistics.vue</p>

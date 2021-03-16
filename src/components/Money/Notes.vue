@@ -42,3 +42,4 @@ export default class Notes extends Vue {
   }
 }
 </style>
+

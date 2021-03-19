@@ -7,16 +7,17 @@ type RecordItem = {
   createdAt?: Date;
 };
 const recordListModel = {
+  data: [] as RecordItem[],
   clone(data: RecordItem[] | RecordItem) {
     return JSON.parse(JSON.stringify(data));
   },
   fetch() {
     return JSON.parse(window.localStorage.getItem(localStorageKeyName) || "[]") as RecordItem[];
   },
-  save(data: RecordItem[]) {
+  save() {
     window.localStorage.setItem(
       localStorageKeyName,
-      JSON.stringify(data)
+      JSON.stringify(this.data)
     );
   },
 };

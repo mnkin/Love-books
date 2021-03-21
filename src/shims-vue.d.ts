@@ -1,5 +1,6 @@
 declare module '*.vue' {
   import Vue from 'vue'
+  import createId from './lib/createId';
   export default Vue
 }
 
@@ -31,4 +32,9 @@ type TagListModel = {
 interface Window {
   tagList: Tag[];
   createTag: (name: string) => void;
+  removeTag: (id: string) => boolean;
+  updateTag: (id: string, name: string) => 'success' | "not found" | "duplicated";
+  findTag: (id: string) => Tag;
+  recordList: RecordItem[];
+  createRecord: (record: RecordItem) => void;
 }

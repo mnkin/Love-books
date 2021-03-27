@@ -1,7 +1,11 @@
 <template>
   <Layout>
-    <Tabs :dataSource="recordTypeList" :value.sync="type" classPrefix="zzz" />
-    <Tabs :dataSource="intervalList" :value.sync="interval" />
+    <Tabs classPrefix="type" :dataSource="recordTypeList" :value.sync="type" />
+    <Tabs
+      classPrefix="interval"
+      :dataSource="intervalList"
+      :value.sync="interval"
+    />
     <div>
       type:{{ type }}
       <br />
@@ -28,7 +32,7 @@ export default class Statistics extends Vue {
 
 
 <style lang="scss" scoped>
-::v-deep .zzz-tabs-item {
+::v-deep .type-tabs-item {
   background: white;
   &.selected {
     border: 1px solid red;
@@ -38,7 +42,7 @@ export default class Statistics extends Vue {
     }
   }
 }
-.statistic-item {
-  border: 1px solid red;
+::v-deep .interval-tabs-item {
+  height: 48px;
 }
 </style>

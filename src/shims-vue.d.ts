@@ -8,13 +8,18 @@ declare module "*.svg" {
   const content: string;
   export default content;
 }
+type RootState = {
+  recordList: RecordItem[];
+  tagList: Tag[];
+  currentTag?: Tag;
+}
 
 type RecordItem = {
   tags: string[];
   notes: string;
   type: string;
   amount: number;
-  createdAt?: Date;
+  createdAt?: string;
 };
 type Tag = {
   id: string;

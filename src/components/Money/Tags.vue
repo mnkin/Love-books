@@ -30,7 +30,6 @@ export default class Tags extends mixins(TagHelper) {
   get tagList() {
     return this.$store.state.tagList;
   }
-
   created() {
     this.$store.commit("fetchTags");
   }

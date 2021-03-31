@@ -1,5 +1,8 @@
 <template>
   <Layout>
+    <div class="navBar">
+      <span>标签页</span>
+    </div>
     <div class="tags">
       <router-link
         class="tag"
@@ -37,6 +40,16 @@ export default class Labels extends mixins(TagHelper) {
 </script>
 
 <style lang="scss" scoped>
+.navBar {
+  text-align: center;
+  font-size: 16px;
+  padding: 12px 16px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
 .tags {
   background: white;
   font-size: 16px;

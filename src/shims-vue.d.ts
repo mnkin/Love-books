@@ -10,10 +10,10 @@ declare module "*.svg" {
 }
 type RootState = {
   recordList: RecordItem[];
+  createRecordError: Error | null;
   tagList: Tag[];
   currentTag?: Tag;
 }
-
 type RecordItem = {
   tags: Tag[];
   notes: string;

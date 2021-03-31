@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <Tabs classPrefix="type" :dataSource="recordTypeList" :value.sync="type" />
-    <ol>
+    <ol v-if="groupedList.length > 0">
       <li v-for="(group, index) in groupedList" :key="index">
         <h3 class="title">
           {{ beautify(group.title) }}<span>{{ group.total }}</span>
@@ -15,6 +15,9 @@
         </ol>
       </li>
     </ol>
+    <div v-else class="noResult">
+      <span>目前没有相关记录</span>
+    </div>
   </Layout>
 </template>
 
@@ -29,7 +32,7 @@ import clone from "@/lib/clone";
 @Component({ components: { Tabs } })
 export default class Statistics extends Vue {
   tagString(tags: Tag[]) {
-    return tags.length === 0 ? "无" : tags.join(",");
+    return tags.length === 0 ? "无" : tags.map((t) => t.name).join("，");
   }
   beautify(string: string) {
     const now = dayjs();
@@ -53,9 +56,6 @@ export default class Statistics extends Vue {
 
   get groupedList() {
     const { recordList } = this;
-    if (recordList.length === 0) {
-      return [];
-    }
     type Result = { title: string; total?: number; items: RecordItem[] }[];
     const newList = clone(recordList)
       .filter((r) => r.type === this.type)
@@ -130,5 +130,9 @@ export default class Statistics extends Vue {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.noResult {
+  padding: 16px;
+  text-align: center;
 }
 </style>

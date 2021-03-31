@@ -16,9 +16,9 @@ body {
   font-size: 16px;
   background: #f5f5f5;
 }
-// .clearfix:after {
-//   content: "";
-//   display: block;
-//   clear: both;
-// }
+
+#app {
+  max-width: 500px;
+  margin: 0 auto;
+}
 </style>

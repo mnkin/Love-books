@@ -46,22 +46,15 @@ export default class Tags extends mixins(TagHelper) {
 </script>
 
 <style lang="scss" scoped>
-.navBar {
-  text-align: center;
-  font-size: 16px;
-  padding: 12px 16px;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .tags {
-  background: white;
+  background: #fbfaf4;
   font-size: 14px;
-  padding: 16px;
+  color: #858687;
+  padding: 12px;
   display: flex;
   flex-grow: 1;
   flex-direction: column-reverse;
+  justify-content: space-between;
   > .current {
     display: flex;
     flex-wrap: wrap;
@@ -72,11 +65,11 @@ export default class Tags extends mixins(TagHelper) {
       line-height: 24px;
       border-radius: (24px/2);
       padding: 0 16px;
-      margin-top: 4px;
+      margin-top: 6px;
       margin-right: 12px;
       &.selected {
         color: white;
-        background: orange;
+        background: #f2ce79;
       }
     }
   }
@@ -85,7 +78,7 @@ export default class Tags extends mixins(TagHelper) {
     button {
       background: transparent;
       border: none;
-      color: #999;
+      color: #f1a2bc;
       border-bottom: 1px solid;
       padding: 0 4px;
     }

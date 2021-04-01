@@ -16,7 +16,7 @@ export default class Button extends Vue {}
 
 <style lang="scss" scoped>
 .createTag {
-  background: rgb(179, 178, 178);
+  background: #efa5ba;
   color: white;
   padding: 0 16px;
   border-radius: 4px;

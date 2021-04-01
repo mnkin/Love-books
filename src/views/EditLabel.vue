@@ -60,9 +60,10 @@ export default class EditLabel extends Vue {
 <style lang="scss" scoped>
 .navBar {
   text-align: center;
-  font-size: 16px;
-  padding: 12px 16px;
-  background: #fff;
+  font-size: 24px;
+  padding: 9px 16px;
+  background: #f1a2bc;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,7 +84,7 @@ export default class EditLabel extends Vue {
 }
 .button-wrapper {
   text-align: center;
-  padding: 16px;
+  border-radius: 4px;
   margin-top: 44-16px;
 }
 </style>

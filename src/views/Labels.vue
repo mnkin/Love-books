@@ -15,7 +15,7 @@
       </router-link>
     </div>
     <div class="createTag-wrapper">
-      <Button class="createTag" @click="createTag">新建标签</Button>
+      <Button @click="createTag">新建标签</Button>
     </div>
   </Layout>
 </template>
@@ -42,9 +42,10 @@ export default class Labels extends mixins(TagHelper) {
 <style lang="scss" scoped>
 .navBar {
   text-align: center;
-  font-size: 16px;
-  padding: 12px 16px;
-  background: #fff;
+  font-size: 24px;
+  color: white;
+  padding: 9px 16px;
+  background: #efa5ba;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,17 +69,9 @@ export default class Labels extends mixins(TagHelper) {
     }
   }
 }
-.createTag {
-  background: rgb(179, 178, 178);
-  color: white;
-  padding: 0 16px;
+.createTag-wrapper {
+  text-align: center;
   border-radius: 4px;
-  border: none;
-  height: 40px;
-  &-wrapper {
-    text-align: center;
-    margin-top: 28px;
-    padding: 16px;
-  }
+  margin-top: 28px;
 }
 </style>
